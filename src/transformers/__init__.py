@@ -128,7 +128,6 @@ _import_structure = {
     ],
     "models": [],
     # Models
-    "models.mixformer_sequential": ["MIXFORMER_SEQUENTIAL_PRETRAINED_CONFIG_ARCHIVE_MAP", "MixFormerSequentialConfig", "MixFormerSequentialTokenizer"],
     "models.albert": ["ALBERT_PRETRAINED_CONFIG_ARCHIVE_MAP", "AlbertConfig"],
     "models.align": [
         "ALIGN_PRETRAINED_CONFIG_ARCHIVE_MAP",
@@ -434,6 +433,11 @@ _import_structure = {
     "models.megatron_bert": ["MEGATRON_BERT_PRETRAINED_CONFIG_ARCHIVE_MAP", "MegatronBertConfig"],
     "models.megatron_gpt2": [],
     "models.mgp_str": ["MGP_STR_PRETRAINED_CONFIG_ARCHIVE_MAP", "MgpstrConfig", "MgpstrProcessor", "MgpstrTokenizer"],
+    "models.mixformer_sequential": [
+        "MIXFORMER_SEQUENTIAL_PRETRAINED_CONFIG_ARCHIVE_MAP",
+        "MixFormerSequentialConfig",
+        "MixFormerSequentialTokenizer",
+    ],
     "models.mluke": [],
     "models.mobilebert": ["MOBILEBERT_PRETRAINED_CONFIG_ARCHIVE_MAP", "MobileBertConfig", "MobileBertTokenizer"],
     "models.mobilenet_v1": ["MOBILENET_V1_PRETRAINED_CONFIG_ARCHIVE_MAP", "MobileNetV1Config"],
@@ -815,7 +819,6 @@ except OptionalDependencyNotAvailable:
     ]
 else:
     # Fast tokenizers structure
-    _import_structure["models.mixformer_sequential"].append("MixFormerSequentialTokenizerFast")
     _import_structure["models.albert"].append("AlbertTokenizerFast")
     _import_structure["models.bart"].append("BartTokenizerFast")
     _import_structure["models.barthez"].append("BarthezTokenizerFast")
@@ -855,6 +858,7 @@ else:
     _import_structure["models.markuplm"].append("MarkupLMTokenizerFast")
     _import_structure["models.mbart"].append("MBartTokenizerFast")
     _import_structure["models.mbart50"].append("MBart50TokenizerFast")
+    _import_structure["models.mixformer_sequential"].append("MixFormerSequentialTokenizerFast")
     _import_structure["models.mobilebert"].append("MobileBertTokenizerFast")
     _import_structure["models.mpnet"].append("MPNetTokenizerFast")
     _import_structure["models.mt5"].append("MT5TokenizerFast")
@@ -1070,21 +1074,6 @@ else:
 
     # PyTorch models structure
 
-    _import_structure["models.mixformer_sequential"].extend(
-        [
-            "MIXFORMER_SEQUENTIAL_PRETRAINED_MODEL_ARCHIVE_LIST",
-            "MixFormerSequentialForMaskedLM",
-            "MixFormerSequentialForCausalLM",
-            "MixFormerSequentialForMultipleChoice",
-            "MixFormerSequentialForQuestionAnswering",
-            "MixFormerSequentialForSequenceClassification",
-            "MixFormerSequentialForTokenClassification",
-            "MixFormerSequentialLayer",
-            "MixFormerSequentialModel",
-            "MixFormerSequentialPreTrainedModel",
-            "load_tf_weights_in_mixformer_sequential",
-        ]
-    )
     _import_structure["models.albert"].extend(
         [
             "ALBERT_PRETRAINED_MODEL_ARCHIVE_LIST",
@@ -2232,6 +2221,21 @@ else:
             "MgpstrForSceneTextRecognition",
             "MgpstrModel",
             "MgpstrPreTrainedModel",
+        ]
+    )
+    _import_structure["models.mixformer_sequential"].extend(
+        [
+            "MIXFORMER_SEQUENTIAL_PRETRAINED_MODEL_ARCHIVE_LIST",
+            "MixFormerSequentialForCausalLM",
+            "MixFormerSequentialForMaskedLM",
+            "MixFormerSequentialForMultipleChoice",
+            "MixFormerSequentialForQuestionAnswering",
+            "MixFormerSequentialForSequenceClassification",
+            "MixFormerSequentialForTokenClassification",
+            "MixFormerSequentialLayer",
+            "MixFormerSequentialModel",
+            "MixFormerSequentialPreTrainedModel",
+            "load_tf_weights_in_mixformer_sequential",
         ]
     )
     _import_structure["models.mobilebert"].extend(
@@ -4276,7 +4280,6 @@ if TYPE_CHECKING:
         load_tf2_weights_in_pytorch_model,
     )
     from .models.albert import ALBERT_PRETRAINED_CONFIG_ARCHIVE_MAP, AlbertConfig
-    from .models.mixformer_sequential import MIXFORMER_SEQUENTIAL_PRETRAINED_CONFIG_ARCHIVE_MAP, MixFormerSequentialConfig, MixFormerSequentialTokenizer
     from .models.align import (
         ALIGN_PRETRAINED_CONFIG_ARCHIVE_MAP,
         AlignConfig,
@@ -4564,6 +4567,11 @@ if TYPE_CHECKING:
     from .models.mega import MEGA_PRETRAINED_CONFIG_ARCHIVE_MAP, MegaConfig
     from .models.megatron_bert import MEGATRON_BERT_PRETRAINED_CONFIG_ARCHIVE_MAP, MegatronBertConfig
     from .models.mgp_str import MGP_STR_PRETRAINED_CONFIG_ARCHIVE_MAP, MgpstrConfig, MgpstrProcessor, MgpstrTokenizer
+    from .models.mixformer_sequential import (
+        MIXFORMER_SEQUENTIAL_PRETRAINED_CONFIG_ARCHIVE_MAP,
+        MixFormerSequentialConfig,
+        MixFormerSequentialTokenizer,
+    )
     from .models.mobilebert import MOBILEBERT_PRETRAINED_CONFIG_ARCHIVE_MAP, MobileBertConfig, MobileBertTokenizer
     from .models.mobilenet_v1 import MOBILENET_V1_PRETRAINED_CONFIG_ARCHIVE_MAP, MobileNetV1Config
     from .models.mobilenet_v2 import MOBILENET_V2_PRETRAINED_CONFIG_ARCHIVE_MAP, MobileNetV2Config
@@ -4917,7 +4925,6 @@ if TYPE_CHECKING:
         from .utils.dummy_tokenizers_objects import *
     else:
         # Fast tokenizers imports
-        from .models.mixformer_sequential import MixFormerSequentialTokenizerFast
         from .models.albert import AlbertTokenizerFast
         from .models.bart import BartTokenizerFast
         from .models.barthez import BarthezTokenizerFast
@@ -4955,6 +4962,7 @@ if TYPE_CHECKING:
         from .models.markuplm import MarkupLMTokenizerFast
         from .models.mbart import MBartTokenizerFast
         from .models.mbart50 import MBart50TokenizerFast
+        from .models.mixformer_sequential import MixFormerSequentialTokenizerFast
         from .models.mobilebert import MobileBertTokenizerFast
         from .models.mpnet import MPNetTokenizerFast
         from .models.mt5 import MT5TokenizerFast
@@ -5131,22 +5139,6 @@ if TYPE_CHECKING:
             top_k_top_p_filtering,
         )
         from .modeling_utils import PreTrainedModel
-
-        # PyTorch model imports
-
-        from .models.mixformer_sequential import (
-            MIXFORMER_SEQUENTIAL_PRETRAINED_MODEL_ARCHIVE_LIST,
-            MixFormerSequentialForMaskedLM,
-            MixFormerSequentialForCausalLM,
-            MixFormerSequentialForMultipleChoice,
-            MixFormerSequentialForQuestionAnswering,
-            MixFormerSequentialForSequenceClassification,
-            MixFormerSequentialForTokenClassification,
-            MixFormerSequentialLayer,
-            MixFormerSequentialModel,
-            MixFormerSequentialPreTrainedModel,
-            load_tf_weights_in_mixformer_sequential,
-        )
         from .models.albert import (
             ALBERT_PRETRAINED_MODEL_ARCHIVE_LIST,
             AlbertForMaskedLM,
@@ -6090,6 +6082,21 @@ if TYPE_CHECKING:
             MgpstrForSceneTextRecognition,
             MgpstrModel,
             MgpstrPreTrainedModel,
+        )
+
+        # PyTorch model imports
+        from .models.mixformer_sequential import (
+            MIXFORMER_SEQUENTIAL_PRETRAINED_MODEL_ARCHIVE_LIST,
+            MixFormerSequentialForCausalLM,
+            MixFormerSequentialForMaskedLM,
+            MixFormerSequentialForMultipleChoice,
+            MixFormerSequentialForQuestionAnswering,
+            MixFormerSequentialForSequenceClassification,
+            MixFormerSequentialForTokenClassification,
+            MixFormerSequentialLayer,
+            MixFormerSequentialModel,
+            MixFormerSequentialPreTrainedModel,
+            load_tf_weights_in_mixformer_sequential,
         )
         from .models.mobilebert import (
             MOBILEBERT_PRETRAINED_MODEL_ARCHIVE_LIST,

@@ -30,7 +30,6 @@ logger = logging.get_logger(__name__)
 CONFIG_MAPPING_NAMES = OrderedDict(
     [
         # Add configs here
-        ("mixformer_sequential", "MixFormerSequentialConfig"),
         ("albert", "AlbertConfig"),
         ("align", "AlignConfig"),
         ("altclip", "AltCLIPConfig"),
@@ -139,6 +138,7 @@ CONFIG_MAPPING_NAMES = OrderedDict(
         ("mega", "MegaConfig"),
         ("megatron-bert", "MegatronBertConfig"),
         ("mgp-str", "MgpstrConfig"),
+        ("mixformer_sequential", "MixFormerSequentialConfig"),
         ("mobilebert", "MobileBertConfig"),
         ("mobilenet_v1", "MobileNetV1Config"),
         ("mobilenet_v2", "MobileNetV2Config"),
@@ -245,7 +245,6 @@ CONFIG_MAPPING_NAMES = OrderedDict(
 CONFIG_ARCHIVE_MAP_MAPPING_NAMES = OrderedDict(
     [
         # Add archive maps here)
-        ("mixformer_sequential", "MIXFORMER_SEQUENTIAL_PRETRAINED_CONFIG_ARCHIVE_MAP"),
         ("albert", "ALBERT_PRETRAINED_CONFIG_ARCHIVE_MAP"),
         ("align", "ALIGN_PRETRAINED_CONFIG_ARCHIVE_MAP"),
         ("altclip", "ALTCLIP_PRETRAINED_CONFIG_ARCHIVE_MAP"),
@@ -347,6 +346,7 @@ CONFIG_ARCHIVE_MAP_MAPPING_NAMES = OrderedDict(
         ("mega", "MEGA_PRETRAINED_CONFIG_ARCHIVE_MAP"),
         ("megatron-bert", "MEGATRON_BERT_PRETRAINED_CONFIG_ARCHIVE_MAP"),
         ("mgp-str", "MGP_STR_PRETRAINED_CONFIG_ARCHIVE_MAP"),
+        ("mixformer_sequential", "MIXFORMER_SEQUENTIAL_PRETRAINED_CONFIG_ARCHIVE_MAP"),
         ("mobilenet_v1", "MOBILENET_V1_PRETRAINED_CONFIG_ARCHIVE_MAP"),
         ("mobilenet_v2", "MOBILENET_V2_PRETRAINED_CONFIG_ARCHIVE_MAP"),
         ("mobilevit", "MOBILEVIT_PRETRAINED_CONFIG_ARCHIVE_MAP"),
@@ -439,7 +439,6 @@ CONFIG_ARCHIVE_MAP_MAPPING_NAMES = OrderedDict(
 MODEL_NAMES_MAPPING = OrderedDict(
     [
         # Add full (and cased) model names here
-        ("mixformer_sequential", "MixFormerSequential"),
         ("albert", "ALBERT"),
         ("align", "ALIGN"),
         ("altclip", "AltCLIP"),
@@ -566,6 +565,7 @@ MODEL_NAMES_MAPPING = OrderedDict(
         ("megatron-bert", "Megatron-BERT"),
         ("megatron_gpt2", "Megatron-GPT2"),
         ("mgp-str", "MGP-STR"),
+        ("mixformer_sequential", "MixFormerSequential"),
         ("mluke", "mLUKE"),
         ("mms", "MMS"),
         ("mobilebert", "MobileBERT"),
